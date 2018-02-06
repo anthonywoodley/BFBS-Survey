@@ -1,0 +1,124 @@
+/* $Id: local-sample.css,v 1.1.2.1 2010/01/11 00:08:12 sociotech Exp $ */
+
+/****************************/
+/* LOCAL CSS                */
+/****************************/
+
+/* Put your custom CSS and CSS overrides in this file and  */
+/* rename it local.css.  By restricting your CSS changes   */
+/* to local.css, your changes will not be overwritten when */
+/* upgrading to a new version of this theme.  You can also */
+/* use a local-rtl.css file for the equivalent in RTL.     */
+
+/* Steps to activate local.css:                       */
+/* 1. Add your custom CSS to this file                */
+/* 2. Rename this file to local.css                   */
+/* 3. Clear cached data at admin/settings/performance */
+
+//* Body stylings
+----------------------------------------------------------------------------- */
+div#page-outer {
+    width:960px; 
+    margin:0 auto;
+}
+
+div#page {
+    width:960px;
+}
+body {
+}
+div#logo {
+	padding-top: 20px;
+	}
+
+div.error, .error {
+	font-weight: bold;
+    color: #8C2E0B;
+}
+	
+/* Font styling
+------------------------------------------------------------------------------ */
+/* These were re-used from the original BFBS design. */
+body {
+    font-family: Arial,Helvetica,Tahoma,Verdana,"Bitstream Vera Sans",sans-serif;
+    color:#333333;
+    line-height:125%;
+}
+
+h3, h3:link, h3:visited {
+  color:#black;
+  text-decoration:none;
+}
+
+div#header-site-info {
+	height: 80px;
+	}
+h1.title {
+	display: none;
+	}
+/* Primary menu
+---------------------------------------------------------------------------------- */
+div#header-top-wrapper {
+    background-color:#000000;
+    background-image:url("../images/bfbs_primary_menu_logo.png");
+    background-repeat:no-repeat;
+	height: 25px;
+	}
+div#block-menu-menu-group div.inner div.content {
+			       font-size:11px;
+}
+
+div#header-top-wrapper div.inner div.content ul.menu li {
+			       border-right-style:none;
+}
+
+div#header-top-wrapper div.inner div.content ul.menu {
+			       text-align:right;
+}
+
+div#header-top-wrapper {
+    margin-bottom:0; 
+}
+
+div#header-top-wrapper div.inner {
+    margin-left:10px;
+    margin-right:10px;
+}
+
+div#header-top-wrapper div.inner div.content {
+    height:21px;
+    padding-top:4px;
+    padding-right:40px;
+}
+
+div#header-top-wrapper ul li a {
+    color:#CCCCCC;
+    padding-left:9px;
+    padding-right:7px;
+}
+
+/* Change hover */
+div#header-top-wrapper div.inner div.content ul li a:hover {
+    color:#FFFFFF;
+    text-decoration:none;
+}
+
+div#header-top-wrapper div.inner div.content ul li {
+    border-left: 1px solid #363636;
+	font-size: 11px;
+}
+/* Footer
+------------------------------------------------------------------ */
+div#footer-inner {
+    color:#FFFFFF;
+    padding-top:5px;
+    background-color:#FFFFFF;
+}
+
+div#main-wrapper {
+    background-color:#f2f2f2;
+}
+
+h1.title {
+	display: none;
+	}

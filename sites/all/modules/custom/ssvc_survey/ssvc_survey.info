@@ -1,0 +1,4 @@
+name = Survey Form
+description = Module to capture and redirect to url
+package = SSVC
+core = 7.x

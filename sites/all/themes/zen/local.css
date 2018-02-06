@@ -1,0 +1,283 @@
+/* $Id: local-sample.css,v 1.1.2.1 2010/01/11 00:08:12 sociotech Exp $ */
+
+/****************************/
+/* LOCAL CSS                */
+/****************************/
+
+/* Put your custom CSS and CSS overrides in this file and  */
+/* rename it local.css.  By restricting your CSS changes   */
+/* to local.css, your changes will not be overwritten when */
+/* upgrading to a new version of this theme.  You can also */
+/* use a local-rtl.css file for the equivalent in RTL.     */
+
+/* Steps to activate local.css:                       */
+/* 1. Add your custom CSS to this file                */
+/* 2. Rename this file to local.css                   */
+/* 3. Clear cached data at admin/settings/performance */
+
+/* Body stylings
+----------------------------------------------------------------------------- */
+div#page-outer {
+    width:960px; 
+    margin:0 auto;
+}
+
+div#page {
+    width:960px;
+}
+body {
+}
+div#logo {
+	padding-top: 20px;
+	}
+/* Font styling
+------------------------------------------------------------------------------ */
+/* These were re-used from the original BFBS design. */
+body {
+    font-family: Arial,Helvetica,Tahoma,Verdana,"Bitstream Vera Sans",sans-serif;
+    color:#333333;
+    line-height:125%;
+}
+
+h3, h3:link, h3:visited {
+  color:#black;
+  text-decoration:none;
+}
+
+div#header-site-info {
+	height: 80px;
+	}
+
+/* Primary menu
+---------------------------------------------------------------------------------- */
+
+div#block-menu-menu-top-menu {
+    background-color:#000000;
+    background-image:url("../images/bfbs_primary_menu_logo.png");
+    background-repeat:no-repeat;
+}
+
+div.block-menu-menu-group-class div.inner div.content {
+			       padding-top:0;
+			       padding-bottom:0;
+}
+
+div#block-menu-menu-top-menu div.inner div.content {
+			       font-size:11px;
+}
+
+div#block-menu-menu-top-menu div.inner div.content ul.menu li {
+			       border-right-style:none;
+}
+
+div#block-menu-menu-top-menu div.inner div.content ul.menu {
+			       text-align:right;
+}
+
+div#block-menu-menu-top-menu {
+    margin-bottom:0; 
+}
+
+div#block-menu-menu-top-menu div.inner {
+    margin-left:10px;
+    margin-right:10px;
+}
+
+div#block-menu-menu-top-menu div.inner div.content {
+    height:21px;
+    padding-top:4px;
+    padding-right:40px;
+}
+
+div#block-menu-menu-top-menu ul li a {
+    color:#CCCCCC;
+    padding-left:9px;
+    padding-right:7px;
+	list-style-image:none !important;
+  	list-style-type:none;
+}
+/* Change hover */
+div#block-menu-menu-top-menu div.inner div.content ul li a:hover {
+    color:#FFFFFF;
+    text-decoration:none;
+}
+
+div#block-menu-menu-top-menu div.inner div.content ul li {
+    border-left: 1px solid #363636;
+}
+ul li.leaf {
+	float: left;
+  list-style-image: none;
+  list-style-type:none;
+}
+
+
+/* Header block
+--------------------------------------------------------------------------------- */
+/* Set to explicitly set the height so that IE6/IE7 will set the heights correctly 
+and therefore the cut in the background image will look OK. */
+div#header-top {
+    height:25px;
+}
+
+/* Set to explicitly set the height so that IE6/IE7 will set the heights correctly 
+and therefore the cut in the background image will look OK. */
+div#header-group {
+    height:80px;
+}
+
+/* Set to explicitly set the height so that IE6/IE7 will set the heights correctly 
+and therefore the cut in the background image will look OK. */
+div#preface-top {
+    height:67px;
+}
+
+
+div#header-group div.block {
+    margin-bottom:0;
+}
+
+/* Secondary menu
+--------------------------------------------------------------------------------- */
+
+div#block-menu-menu-rescan {
+    background-color:#000000;
+}
+
+div#block-menu-menu-rescan div.inner {
+    background-color:#000000;
+    background-repeat:repeat-x;
+    background-position:left top;
+}
+div#block-menu-menu-rescan  div.inner div.content ul li {
+    padding-top:9px;
+    padding-bottom:11px;
+    border:none; 
+    display:block;
+    float:left;
+    height:16px;
+}
+
+div#block-menu-menu-rescan div.inner div.content {
+    padding:0 10px 0 10px;
+}
+
+div#block-menu-menu-rescan div.inner div.content ul {
+    text-transform:uppercase;
+}
+
+div#block-menu-menu-rescan div.inner div.content ul li a {
+    color:#CCCCCC;
+    font-size:11px;
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-color:#CCCCCC;
+    padding:0 8px 0 5px;
+}
+
+/* Change hover */
+div#block-menu-menu-rescan div.inner div.content ul li a:hover {
+    color:#FFFFFF;
+    font-size:11px;
+    text-decoration:none;
+}
+
+/* Fix switch to custom menu */
+div#block-menu-menu-rescan {
+    background-color:#000000;
+}
+
+/* Taking out the lower margin to allow room for the Breadcrumb block. */
+div#block-menu-menu-rescan {
+    margin-bottom:0;
+}
+
+/* All blocks in the main-wrapper
+----------------------------------------------------------------- */
+div#main-wrapper div.block div.inner {
+    background-color:#FFFFFF;
+    margin:5px;
+    padding:10px;
+}
+
+div#main-wrapper div.block div.inner h2 {
+    color:#7F358A;
+}
+
+div#main-wrapper div.block {
+    margin-bottom:0;
+}
+
+div#main-wrapper div#main {
+    min-height:800px;
+}
+
+/* This is a fix to make min height work for IE6. */
+* html div#main-wrapper {
+    height:800px;
+}
+
+/* Footer
+------------------------------------------------------------------ */
+div#footer-inner {
+    color:#FFFFFF;
+    padding-top:5px;
+    background-color:#FFFFFF;
+}
+
+div#main-wrapper {
+    background-color:#f2f2f2;
+}
+
+/* Footer menu block
+------------------------------------------------------------------ */
+div.footer-menu-block a {
+    color:#666666;
+}
+
+div.footer-menu-block li {
+    border-right-color:#dadada;
+}
+
+/* Breadcrumb block
+----------------------------------------------------------------------------- */
+div.breadcrumb-block {
+    margin-bottom:0;
+    height:31px;
+    padding-top:10px;
+}
+
+div.breadcrumb-block p {
+    margin:0;
+}
+
+/* Big Salute promotional block
+----------------------------------------------------------------- */
+div.views-field-field-intro-promotional-block-value a,
+div.views-field-field-intro-promotional-block-value a:hover,
+div.views-field-field-intro-promotional-block-value a:visited {
+    color:#7F358A;
+    font-weight:bold;
+}
+
+/* Global fudge factor for blocks in content bottom
+------------------------------------------------------------------------ */
+
+div#main-wrapper  div#content-bottom div.grid16-4 {
+    margin:0px;
+    width: 235px;
+    padding-left:0px;
+    padding-right:0px;
+}
+/* Secondary menu
+ * Additional change to remove right side upright bar.
+----------------------------------------------------------------------------- */
+div.secondary-links-menu-block div.inner div.content ul li.last a {
+    border:none;
+}
+
+/* Hide the carousel info div
+----------------------------------------------------------------------------- */
+div#info {
+    display:none;
+}

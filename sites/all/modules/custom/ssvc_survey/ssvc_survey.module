@@ -1,0 +1,89 @@
+<?php
+
+function ssvc_survey_menu() {
+    
+    $items = array();
+	$items['landing'] = array(
+        'title' => 'Landing Page for Survey registration',
+        'page callback' => 'drupal_get_form',
+        'page arguments' => array('ssvc_survey_form'), //put the name of the form here
+        'access callback' => TRUE,
+        'type' => MENU_CALLBACK
+	);
+
+
+        return $items;
+    
+}
+
+function ssvc_survey_form($form, &$form_state) {
+    
+    $form = array();
+
+    $form['email_field'] = array(
+        "#title" => '',
+        '#placeholder' => t('Enter email here to register!'),
+        '#type' => 'textfield',
+        '#size' => 40,
+        //'#required' => TRUE,
+    );
+    
+    
+    $form['submit_button'] = array(
+    '#type' => 'submit',
+    '#value' => t('Register'),
+    
+    );
+ 
+  return $form;
+    
+}
+
+function ssvc_survey_form_validate($form, &$form_state) {
+
+    
+    if (empty($form_state['values']['email_field'])) {
+        form_set_error('email_field',t('email ID blank'));
+    }else {
+        if (! valid_email_address($form_state['values']['email_field'])) {
+            form_set_error('email_field',t('Please enter a valid email id'));
+        }
+     }
+    $ssvc_survey = new EntityFieldQuery;
+                $result = $ssvc_survey
+                                      ->entityCondition('entity_type', 'node')
+                                      ->entityCondition('bundle', 'suvery_registration')
+                                      ->fieldCondition('field_email','email', $form_state['values']['email_field'],"=")
+                                      ->execute(); 
+    if (isset($ssvc_survey->ordered_results)){
+        $nid = 0;
+        foreach($result['node'] as $n) {
+            $nid = $n->nid;
+        }
+        $node = node_load($nid);
+        $url = $node->field_url['und'][0]['value'];
+        form_set_error('email_field',t('You have already registered please use <a href="@link">this link</a>. This site is for new users only.', array('@link'=>url($url))));
+    }
+}
+
+function ssvc_survey_form_submit($form, &$form_state) {
+    
+  $node = new stdClass();
+  $node->type= "suvery_registration";
+  node_object_prepare($node);
+  $node->language = LANGUAGE_NONE;
+  $node->title= $form_state['values']['email_field'];
+  $node->field_email['und'][0]['email']=$form_state['values']['email_field'];
+  if ($node = node_submit($node)) { // Prepare node for saving
+   node_save($node);
+  }
+  $url = variable_get('URL_REDIRECT')."&bfbs_id=$node->nid";
+  
+  $node->field_url['und'][0]['value']=$url;
+  if ($node = node_submit($node)) { // Prepare node for saving
+   dsm($node);
+      node_save($node);
+  }
+ drupal_goto($url);//Redirect to the Surveys URL
+}
+?>
